@@ -6,7 +6,7 @@ CFLAGS=-Wall -Wextra --std=c99 --target=i686-pc-none-elf -march=i686 -ffreestand
 
 all: kern.iso
 
-bin/kern.bin: src/kstart.o src/kernel.o
+bin/kern.bin: src/kstart.o src/kernel.o src/splash.o src/display.o
 	$(CC) $(CFLAGS) -T src/klink.ld -o $@ $^
 
 kern.iso: bin/kern.bin
